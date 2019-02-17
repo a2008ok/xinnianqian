@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+    <html lang="zh-CN">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+            <title>新年签</title>
+            <link href="./css/index.css" rel="stylesheet">
+            <script type="text/javascript" src = "js/jquery-3.2.1.min.js"></script>
+        </head>
+
+    <body>
+        <div id="begin">
+            <img id="beginbg" src="./picture/background.jpg" >
+            <input id="inputname" type="text" name="name" maxlength="5">
+            <img id="button" src="./picture/button.png" onclick="abc1()">
+        </div>
+
+        <div id="process" style="display: none;">
+            <img id="processbg" src="./picture/chouqianbg.png" >
+            <img id="qiantong" src="./picture/qiantong.png" onclick="abc2()">
+            <div id="instruction">请点击签筒抽签</div>
+        </div>
+
+        <div id="answer" style="display: none;">
+            <div id="displayname"></div>
+            <img id="answerimg" src="./picture/jieqian.jpg">
+            <img id="qianwen">
+        </div>
+
+
+        <script src="./js/main.js"></script>
+    </body>
+</html>
+
+                
