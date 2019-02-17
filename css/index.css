@@ -1,0 +1,68 @@
+body {
+    font-family: "微软雅黑", STXihei, "黑体";
+    margin: 0;
+}
+
+#inputname{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin:auto;
+    background-color:transparent; 
+    border-style:none none none none;
+}
+
+#button {
+    position: absolute;
+}
+
+#beginbg {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    text-align: center;
+}
+
+#processbg {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    text-align: center;
+}
+
+#qiantong {
+    height: auto;
+    position: absolute;
+}
+
+#instruction {
+    color: #c66565;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+}
+
+#answerimg {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    text-align: center;
+}
+
+#qianwen {
+    position: absolute;
+    top: 0px;
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    text-align: center;
+}
+
+#displayname {
+    position: absolute; 
+    left: 50%; 
+    transform: translateX(-50%);
+    color: #f9f5f4;
+}
