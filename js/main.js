@@ -112,7 +112,7 @@ function abc2(){
         ctx.fillStyle = "#f9f5f4";
         ctx.fillText(a.value,375,76,278);
         
-        var output = document.getElementById("test");
+        var output = document.getElementById("output");
         output.src = canvas.toDataURL("image/png");
 };
 
