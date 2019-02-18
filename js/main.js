@@ -93,7 +93,7 @@ function abc1(){
         ctx.font = 'bold 54px sans-serif';
         ctx.textAlign = "center";
         ctx.fillStyle = "#f9f5f4";
-        ctx.fillText("甄伟前牛逼",375,76,278);
+        ctx.fillText(a.value,375,76,278);
         
         var output = document.getElementById("test");
         output.src = canvas.toDataURL("image/png");
