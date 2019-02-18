@@ -80,6 +80,23 @@ function abc1(){
         else{
             qianwen.src = "./picture/13.png"
         };
+    };
+};
+
+function abc2(){
+    /*签筒抽签动画特效*/
+    $("#qiantong").animate({top:0.1*x+"px"});
+    $("#qiantong").animate({top:0.2*x+"px"});
+    $("#qiantong").animate({top:0.06*x+"px"});
+    $("#qiantong").animate({top:0.2*x+"px"});
+    $("#qiantong").animate({top:0.06*x+"px"});
+    $("#qiantong").animate({top:0.13266*x+"px"});
+    /*进入解签页动画过渡*/
+    setTimeout('$("#process").fadeOut(800);', 3300);
+    setTimeout('$("#save").fadeIn(1300);', 4100);
+    /*替换解签页姓名*/
+    e.innerHTML = a.value;
+    
         var canvas = document.getElementById("myCanvas");
         var ctx=canvas.getContext("2d");
 
@@ -97,21 +114,5 @@ function abc1(){
         
         var output = document.getElementById("test");
         output.src = canvas.toDataURL("image/png");
-    };
-};
-
-function abc2(){
-    /*签筒抽签动画特效*/
-    $("#qiantong").animate({top:0.1*x+"px"});
-    $("#qiantong").animate({top:0.2*x+"px"});
-    $("#qiantong").animate({top:0.06*x+"px"});
-    $("#qiantong").animate({top:0.2*x+"px"});
-    $("#qiantong").animate({top:0.06*x+"px"});
-    $("#qiantong").animate({top:0.13266*x+"px"});
-    /*进入解签页动画过渡*/
-    setTimeout('$("#process").fadeOut(800);', 3300);
-    setTimeout('$("#save").fadeIn(1300);', 4100);
-    /*替换解签页姓名*/
-    e.innerHTML = a.value;
 };
 
