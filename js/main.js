@@ -44,7 +44,7 @@ function abc1(){
 
         ctx.drawImage(img1,0,0);
         ctx.drawImage(img2,0,0);
-        ctx.font = "bold 54px";
+        ctx.font = "bold 54px sans-serif";
         ctx.textAlign = "center";
         ctx.fillStyle = "#f9f5f4";
         ctx.fillText("甄伟前牛逼",375,76,278);
