@@ -33,6 +33,27 @@ e.style.fontSize = 0.04506 * x + "px";
 function abc1(){
     if(a.value.length == 0){ 
         alert("请输入姓名！"); 
+        
+        var canvas = document.createElement("canvas");
+        var ctx=canvas.getContext("2d");
+        canvas.width = 750;
+        canvas.height = 1206;
+
+        var img1=document.getElementById("answerimg");
+        var img2=document.getElementById("qianwen");
+
+        var url1 = img1.src;
+        var url2 = img2.src;
+
+        var img = new Image();
+        img.crossOrigin = "anonymous";
+        img.src = url1 + "?timestamp=" +new Date();
+        document.body.appendChild(img);
+        img.onload = function(){
+            ctx.drawImage(this,0,0,100,100);
+            var base64 = canvas.toDataURL('image/jpg', 1);
+            console.log(base64);
+        }; 
     }
     else{
         /*进入抽签页动画过渡*/
