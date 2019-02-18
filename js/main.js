@@ -34,26 +34,24 @@ function abc1(){
     if(a.value.length == 0){ 
         alert("请输入姓名！"); 
         
-        var canvas = document.createElement("canvas");
+        var canvas = document.getElementById("myCanvas");
         var ctx=canvas.getContext("2d");
-        canvas.width = 750;
-        canvas.height = 1206;
 
         var img1=document.getElementById("answerimg");
+        img1.crossOrigin = "anonymous";
         var img2=document.getElementById("qianwen");
+        img2.crossOrigin = "anonymous";
 
-        var url1 = img1.src;
-        var url2 = img2.src;
-
-        var img = new Image();
-        img.crossOrigin = "anonymous";
-        img.src = url1;
-        document.body.appendChild(img);
-        img.onload = function(){
-            ctx.drawImage(this,0,0,100,100);
-            var base64 = canvas.toDataURL('image/jpg', 1);
-            console.log(base64);
-        }; 
+        ctx.drawImage(img1,0,0);
+        ctx.drawImage(img2,0,0);
+        ctx.font = "bold 54px";
+        ctx.textAlign = "center";
+        ctx.fillStyle = "#f9f5f4";
+        ctx.fillText("甄伟前牛逼"，375，76，278);
+           
+        var output = document.getElementById("test");
+        output.src = canvas.toDataURL("image/png");
+        
     }
     else{
         /*进入抽签页动画过渡*/
