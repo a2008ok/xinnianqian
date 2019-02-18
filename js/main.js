@@ -47,7 +47,7 @@ function abc1(){
 
         var img = new Image();
         img.crossOrigin = "anonymous";
-        img.src = url1 + "?timestamp=" +new Date();
+        img.src = url1;
         document.body.appendChild(img);
         img.onload = function(){
             ctx.drawImage(this,0,0,100,100);
