@@ -1,6 +1,27 @@
 body {
     font-family: "微软雅黑", STXihei, "黑体";
+    background-image: url("../picture/realbg.png");
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    background-position:center top;
     margin: 0;
+}
+
+#title {
+    top: 0px;
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    text-align: center;
+}
+
+#pig {
+    position: absolute;
+    top: -13%;
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    text-align: center;
 }
 
 #inputname{
@@ -12,7 +33,15 @@ body {
     border-style:none none none none;
 }
 
-#button {
+#button1 {
+    position: absolute;
+}
+
+#button2 {
+    position: absolute;
+}
+
+#button3 {
     position: absolute;
 }
 
@@ -28,11 +57,6 @@ body {
     height: auto; 
     display: block; 
     text-align: center;
-}
-
-#qiantong {
-    height: auto;
-    position: absolute;
 }
 
 #instruction {
