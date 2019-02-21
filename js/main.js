@@ -99,7 +99,7 @@ function abc1(){
         var canvas = document.getElementById("myCanvas");
         var ctx=canvas.getContext("2d");
 
-        var img1=document.getElementById("answerimg");
+        var img1=document.getElementById("save");
         img1.crossOrigin = "anonymous";
         var img2=document.getElementById("qianwen");
         img2.crossOrigin = "anonymous";
