@@ -4,32 +4,38 @@
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-            <title>新年签</title>
+            <title>领取你的新学期关键词</title>
             <link href="./css/index.css" rel="stylesheet">
             <script type="text/javascript" src = "js/jquery-3.2.1.min.js"></script>
         </head>
 
-    <body>
-        <div id="begin">
+    <body onload="start()">
+        <div id="realbegin" style="display: none;" onclick="abc0()">
+            <img id="title" src="./picture/title.png" >
+            <img id="pig" src="./picture/pig.png">
+            <p>点击屏幕开始</p>
+        </div>
+
+        <div id="begin" style="display: none;">
             <img id="beginbg" src="./picture/background.png" >
             <input id="inputname" type="text" name="name" maxlength="5">
-            <img id="button" src="./picture/button.png" onclick="abc1()">
+            <img id="button1" src="./picture/button.png" onclick="abc1()">
         </div>
 
         <div id="process" style="display: none;">
-            <img id="processbg" src="./picture/chouqianbg.png" >
-            <img id="qiantong" src="./picture/qiantong.png" onclick="abc2()">
-            <div id="instruction">请点击签筒抽签</div>
+            <img id="processbg" src="./picture/chouqianbg.png">
         </div>
 
         <div id="answer" style="display: none;">
             <div id="displayname"></div>
-            <img id="answerimg" src="./picture/jieqian.jpg">
+            <img id="answerimg" src="./picture/jieqian.png">
             <img id="qianwen" src="./picture/1.png">
+            <img id="button2" src="./picture/button.png" onclick="abc2()">
+            <img id="button3" src="./picture/button.png" onclick="abc3()">
         </div>
         
         <div id="save" style="display: none;">
-            <img id="output">
+            <img id="output" >
         </div>
 
         <canvas id="myCanvas" width="750" height="1206" style="border: 0px; display: none;">
@@ -37,5 +43,3 @@
         <script src="./js/main.js"></script>
     </body>
 </html>
-
-                
