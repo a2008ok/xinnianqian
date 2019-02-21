@@ -36,23 +36,7 @@ e.style.fontSize = 0.04506 * x + "px";
 
 function start(){
     $("#begin").fadeIn(500);
-};
-
-function abc0(){
-    $("#pig").animate({top:0});
-    setTimeout('$("#begin").fadeIn(500);', 500);   
-        setTimeout('$("#realbegin").fadeOut(500);', 1000); 
-};
-
-function abc1(){
-    if(a.value.length == 0){ 
-        alert("请输入姓名！"); 
-    }
-    else{
-        /*进入抽签页动画过渡*/
-        setTimeout('$("#begin").fadeOut(1000);', 100);
-        setTimeout('$("#process").fadeIn(1300);', 1100);
-        /*随机抽选签文*/
+            /*随机抽选签文*/
         var qianwen = document.getElementById("qianwen");
         var f = Math.floor(Math.random()*13);
         if (f == 0){
@@ -94,8 +78,24 @@ function abc1(){
         else{
             qianwen.src = "./picture/13.png"
         };
+};
 
-            /*获取画布canvas*/
+function abc0(){
+    $("#pig").animate({top:0});
+    setTimeout('$("#begin").fadeIn(500);', 500);   
+        setTimeout('$("#realbegin").fadeOut(500);', 1000); 
+};
+
+function abc1(){
+    if(a.value.length == 0){ 
+        alert("请输入姓名！"); 
+    }
+    else{
+        /*进入抽签页动画过渡*/
+        setTimeout('$("#begin").fadeOut(1000);', 100);
+        setTimeout('$("#process").fadeIn(1300);', 1100);
+
+        /*获取画布canvas*/
         var canvas = document.getElementById("myCanvas");
         var ctx=canvas.getContext("2d");
 
