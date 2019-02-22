@@ -1,48 +1,160 @@
-<!DOCTYPE html>
-    <html lang="zh-CN">
-        <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-            <title>领取你的新学期关键词</title>
-            <link href="./css/index.css" rel="stylesheet">
-            <script type="text/javascript" src = "js/jquery-3.2.1.min.js"></script>
-        </head>
+/*获取页面宽度与图片比例*/
+var w = document.body.clientWidth;
+var x = w / 750 * 1206 ;
+/*输入框自适应*/
+var a = document.getElementById("inputname");
+a.style.top = 0.265340 * x + "px";
+a.style.height = 0.0389718 * x + "px";
+a.style.padding = 0.006073 * x + "px";
+a.style.paddingLeft = 0.060086 * x + "px";
+a.style.width = 0.144807 * x + "px";
+a.style.fontSize = 0.0356550 * x + "px";
+/*抽签按钮自适应*/
+var b = document.getElementById("button1");
+b.style.width = 0.4589372 * w + "px";
+b.style.height = 0.1216742 * x + "px";
+b.style.top = 0.3454947 * x + "px";
+b.style.left = 0.2705314 * w + "px";
+/*解签页按钮1自适应*/
+var c = document.getElementById("button2");
+c.style.width = 0.4589372 * w + "px";
+c.style.height = 0.1216742 * x + "px";
+c.style.top = 0.5903454 * x + "px";
+c.style.left = 0.2705314 * w + "px";
+/*解签页按钮2自适应*/
+var d = document.getElementById("button3");
+d.style.width = 0.4589372 * w + "px";
+d.style.height = 0.1216742 * x + "px";
+d.style.top = 0.7270411 * x + "px";
+d.style.left = 0.2705314 * w + "px";
+/*解签页姓名自适应*/
+var e = document.getElementById("displayname");
+e.style.top = 0.01502 * x + "px";
+e.style.fontSize = 0.04506 * x + "px";
 
-    <body onload="start()">
-        <div id="realbegin" style="display: none;" onclick="abc0()">
-            <img id="title" src="./picture/title.png" >
-            <img id="pig" src="./picture/pig.png">
-            <p>点击屏幕开始</p>
-        </div>
+var audio = document.getElementById("bgm");
+var g = 0;
 
-        <div id="begin" style="display: none;">
-            <img id="beginbg" src="./picture/background.png" >
-            <input id="inputname" type="text" name="name" maxlength="5">
-            <img id="button1" src="./picture/button.png" onclick="abc1()">
-        </div>
 
-        <div id="process" style="display: none;">
-            <img id="processbg" src="./picture/chouqianbg.png">
-        </div>
+function start(){
+    $("#begin").fadeIn(500);
+        /*随机抽选签文*/
+        var qianwen = document.getElementById("qianwen");
+        var f = Math.floor(Math.random()*13);
+        if (f == 0){
+            qianwen.src = "./picture/1.png";
+        }
+        else if (f == 1){
+            qianwen.src = "./picture/2.png";
+        }
+        else if (f == 2){
+            qianwen.src = "./picture/3.png";
+        }
+        else if (f == 3){
+            qianwen.src = "./picture/4.png";
+        }
+        else if (f == 4){
+            qianwen.src = "./picture/5.png";
+        }
+        else if (f == 5){
+            qianwen.src = "./picture/6.png";
+        }
+        else if (f == 6){
+            qianwen.src = "./picture/7.png";
+        }
+        else if (f == 7){
+            qianwen.src = "./picture/8.png";
+        }
+        else if (f == 8){
+            qianwen.src = "./picture/9.png";
+        }
+        else if (f == 9){
+            qianwen.src = "./picture/10.png";
+        }
+        else if (f == 10){
+            qianwen.src = "./picture/11.png";
+        }
+        else if (f == 11){
+            qianwen.src = "./picture/12.png";
+        }
+        else{
+            qianwen.src = "./picture/13.png"
+        };
+};
 
-        <div id="answer" style="display: none;">
-            <div id="displayname"></div>
-            <img id="answerimg" src="./picture/jieqian.png">
-            <img id="qianwen" src="./picture/1.png">
-            <img id="button2" src="./picture/button.png" onclick="abc2()">
-            <img id="button3" src="./picture/button.png" onclick="abc3()">
-        </div>
-        
-        <div id="save" style="display: none;">
-            <img id="output" >
-        </div>
-        
-        <img id="savebg" src="./picture/save.png" style="display: none;">
-        <canvas id="myCanvas" width="750" height="1206" style="border: 0px; display: none;">
+function abc0(){
+    $("#control").fadeIn(10);
+    audio.play();
+    $("#tishi").fadeOut(30);
+    $("#pig").animate({top:0});
+    setTimeout('$("#input").fadeIn(500);', 500);   
+    setTimeout('$("#inputname").fadeIn(500);', 500);
+    setTimeout('$("#button1").fadeIn(500);', 500);   
+};
 
-        <script src="./js/main.js"></script>
-    </body>
-</html>
+function abc1(){
+    /*进入抽签页动画过渡*/
+    setTimeout('$("#begin").fadeOut(1000);', 100);
+    setTimeout('$("#process").fadeIn(1300);', 1100);
+    /*检测姓名是否为空*/
+    if(a.value.length == 0){ 
+        alert("请输入姓名！"); 
+    }
+    else{
+        /*获取画布canvas*/
+        var canvas = document.getElementById("myCanvas");
+        var ctx=canvas.getContext("2d");
 
-                
+        var img1=document.getElementById("savebg");
+        img1.crossOrigin = "anonymous";
+        var img2=document.getElementById("qianwen");
+        img2.crossOrigin = "anonymous";
+        /*叠加绘制解签背景及签文*/
+        ctx.drawImage(img1,0,0);
+        ctx.drawImage(img2,0,0);
+        ctx.font = 'bold 54px sans-serif';
+        ctx.textAlign = "center";
+        ctx.fillStyle = "#f9f5f4";
+        ctx.fillText(a.value,375,76,278);
+        /*输出图片*/        
+        var output = document.getElementById("output");
+        output.src = canvas.toDataURL("image/png");
+
+        /*替换解签页姓名*/
+        e.innerHTML = a.value;
+        /*解签页动画过渡*/
+        setTimeout('$("#process").fadeOut(800);', 3300);
+        setTimeout('$("#answer").fadeIn(1300);', 4100);
+
+    };
+};
+
+function abc2(){
+    /*重新加载页面*/
+    location.reload();
+};
+
+function abc3(){
+    $("#answer").fadeOut(500);
+    setTimeout('$("#save").fadeIn(500);', 500);
+    setTimeout('alert("请长按保存图片！");', 1000);
+};
+
+function abc4(){
+
+};
+
+function bmgcontrol(){
+    /*bgm播放控制*/
+    var controlimg = document.getElementById("control");
+    if (g == 0){
+        audio.pause();
+        control.src = "./picture/play.png";
+        g = 1;
+    }
+    else{
+        audio.play();
+        control.src = "./picture/pause.png";
+        g = 0;
+    }
+};
