@@ -24,6 +24,24 @@ body {
     text-align: center;
 }
 
+#tishi {
+    position: absolute;
+    text-align: center;
+    top: 73%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #990000;
+}
+
+#input {
+    position: absolute;
+    top: 0;
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    text-align: center;
+}
+
 #inputname{
     position: absolute;
     left: 50%;
@@ -96,4 +114,11 @@ body {
     height: auto; 
     display: block; 
     text-align: center;
+}
+
+#control {
+    position: absolute;
+    height: 5%;
+    width: auto;
+    top: 0;
 }
