@@ -6,8 +6,8 @@ var a = document.getElementById("inputname");
 a.style.top = 0.265340 * x + "px";
 a.style.height = 0.0389718 * x + "px";
 a.style.padding = 0.006073 * x + "px";
-a.style.paddingLeft = 0.07511 * x + "px";
-a.style.width = 0.1658375 * x + "px";
+a.style.paddingLeft = 0.060086 * x + "px";
+a.style.width = 0.144807 * x + "px";
 a.style.fontSize = 0.0356550 * x + "px";
 /*抽签按钮自适应*/
 var b = document.getElementById("button1");
@@ -32,11 +32,13 @@ var e = document.getElementById("displayname");
 e.style.top = 0.01502 * x + "px";
 e.style.fontSize = 0.04506 * x + "px";
 
+var audio = document.getElementById("bgm");
+var g = 0;
 
 
 function start(){
     $("#begin").fadeIn(500);
-            /*随机抽选签文*/
+        /*随机抽选签文*/
         var qianwen = document.getElementById("qianwen");
         var f = Math.floor(Math.random()*13);
         if (f == 0){
@@ -81,20 +83,24 @@ function start(){
 };
 
 function abc0(){
+    $("#control").fadeIn(10);
+    audio.play();
+    $("#tishi").fadeOut(30);
     $("#pig").animate({top:0});
-    setTimeout('$("#begin").fadeIn(500);', 500);   
-        setTimeout('$("#realbegin").fadeOut(500);', 1000); 
+    setTimeout('$("#input").fadeIn(500);', 500);   
+    setTimeout('$("#inputname").fadeIn(500);', 500);
+    setTimeout('$("#button1").fadeIn(500);', 500);   
 };
 
 function abc1(){
+    /*进入抽签页动画过渡*/
+    setTimeout('$("#begin").fadeOut(1000);', 100);
+    setTimeout('$("#process").fadeIn(1300);', 1100);
+    /*检测姓名是否为空*/
     if(a.value.length == 0){ 
         alert("请输入姓名！"); 
     }
     else{
-        /*进入抽签页动画过渡*/
-        setTimeout('$("#begin").fadeOut(1000);', 100);
-        setTimeout('$("#process").fadeIn(1300);', 1100);
-
         /*获取画布canvas*/
         var canvas = document.getElementById("myCanvas");
         var ctx=canvas.getContext("2d");
@@ -136,4 +142,19 @@ function abc3(){
 
 function abc4(){
 
+};
+
+function bmgcontrol(){
+    /*bgm播放控制*/
+    var controlimg = document.getElementById("control");
+    if (g == 0){
+        audio.pause();
+        control.src = "./picture/play.png";
+        g = 1;
+    }
+    else{
+        audio.play();
+        control.src = "./picture/pause.png";
+        g = 0;
+    }
 };
